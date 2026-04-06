@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Siri Ganapathineedi">
+    <meta name="description" content="MonoMuse Museum — art, technology, and interactive exhibitions in Pittsburgh.">
+    <title>MonoMuse Museum | Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./static/style.css">
+    <!-- jQuery 4.x — https://jquery.com/ — Read More / Read Less on this page (see static/script.js) -->
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+</head>
+
+<body onload="addYear()">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <div class="container">
+        <header class="header">
+            <img id="logo" src="./static/monomuse-logo-transparent.png" alt="MONOMUSE logo with golden glow">
+        </header>
+        <nav class="nav_bar" aria-label="Primary">
+            <a href="index.html" class="nav_home_mobile">Home</a>
+            <button type="button" class="nav_hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primaryNavLinks">&#9776;</button>
+            <div class="nav_links" id="primaryNavLinks">
+                <a href="index.html" class="nav_home_desktop">Home</a>
+                <a href="views/explore.html">Explore</a>
+                <a href="views/exhibitions.html">Exhibitions</a>
+                <a href="views/buytickets.html" class="cta">Buy Tickets</a>
+                <a href="views/checkout.html">Checkout</a>
+                <a href="views/membership.html">Support</a>
+            </div>
+        </nav>
+
+        <main class="main" id="main-content">
+            <h1>MonoMuse Museum</h1>
+            <p id="greeting" role="status" aria-live="polite"></p>
+
+            <h2>What we offer</h2>
+            <p id="shortIntro">
+                MonoMuse is a contemporary museum dedicated to exploring the intersection of art, technology,
+                and human creativity.
+            </p>
+            <p id="longIntro">
+                Through immersive exhibitions, interactive installations, and rotating collections, MonoMuse invites
+                visitors to discover how digital innovation is transforming the way we create, experience, and
+                understand art. Whether you are a first-time visitor or a returning member, our exhibitions offer
+                new perspectives on the role of technology in culture and everyday life.
+            </p>
+            <div class="button-group">
+                <button type="button" id="readMore" class="cta read-toggle">Read more</button>
+                <button type="button" id="readLess" class="cta read-toggle">Read less</button>
+            </div>
+            <p class="home-cta-wrap">
+                <a href="views/explore.html" class="cta">Plan your visit</a>
+                <a href="views/buytickets.html" class="cta">Buy tickets</a>
+            </p>
+
+            <section class="gallery" aria-roledescription="carousel" aria-label="Highlights from MonoMuse">
+                <h2>Gallery highlights</h2>
+                <div class="gallery-viewport">
+                    <div class="gallery-track">
+                        <div class="gallery-slide gallery-slide--active" aria-hidden="false">
+                            <img src="./static/monomuse-logo-transparent.png" alt="MONOMUSE logo with golden glow">
+                        </div>
+                        <div class="gallery-slide" aria-hidden="true">
+                            <img src="./static/gallery-red-exhibit.svg" alt="Gold-lit interactive exhibition hall concept">
+                        </div>
+                        <div class="gallery-slide" aria-hidden="true">
+                            <img src="./static/gallery-monomuse-night.svg" alt="MonoMuse night exterior concept in gold black and white">
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-controls">
+                    <button type="button" class="gallery-prev" aria-label="Show previous gallery image">Previous</button>
+                    <button type="button" class="gallery-next" aria-label="Show next gallery image">Next</button>
+                </div>
+            </section>
+        </main>
+        <figure class="main_img">
+            <img src="./static/MonoMuse%20Museum%20Image.png" alt="MonoMuse museum building exterior">
+        </figure>
+        <footer class="footer">
+            <p><strong>Hours:</strong> Wed–Sun 10 a.m.–6 p.m. · <strong>Contact:</strong> <a href="mailto:hello@monomuse.org">Email MonoMuse</a> · <a href="tel:+14125551234">412-555-1234</a></p>
+            <p class="footer-meta">Fonts: Google Fonts (Space Grotesk). Map: © OpenStreetMap. Video: YouTube embed.</p>
+            <p id="copyYear"></p>
+        </footer>
+    </div>
+    <!-- Leaflet is loaded on explore.html only (see that file). -->
+    <script src="static/script.js"></script>
+</body>
+</html>
