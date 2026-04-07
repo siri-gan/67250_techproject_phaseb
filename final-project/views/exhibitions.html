@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--
+  MonoMuse | exhibitions.html — Exhibition copy + featured video.
+  YouTube iframe is in .video-wrap (16:9 box from CSS padding-bottom trick).
+  Serve from http://localhost if the embed shows a configuration warning (some browsers block file://).
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Siri Ganapathineedi">
+    <meta name="description" content="Current exhibitions at MonoMuse Museum.">
+    <title>Exhibitions | MonoMuse Museum</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+
+<body onload="addYear()">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <div class="container">
+        <header class="header">
+            <img id="logo" src="../static/monomuse-logo-transparent.png" alt="MONOMUSE logo with golden glow">
+        </header>
+        <nav class="nav_bar" aria-label="Primary">
+            <a href="../index.html" class="nav_home_mobile">Home</a>
+            <button type="button" class="nav_hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primaryNavLinks">&#9776;</button>
+            <div class="nav_links" id="primaryNavLinks">
+                <a href="../index.html" class="nav_home_desktop">Home</a>
+                <a href="explore.html">Explore</a>
+                <a href="exhibitions.html">Exhibitions</a>
+                <a href="buytickets.html" class="cta">Buy Tickets</a>
+                <a href="checkout.html">Checkout</a>
+                <a href="membership.html">Support</a>
+            </div>
+        </nav>
+        <main class="main" id="main-content">
+            <h1>Current exhibitions</h1>
+
+            <h2>Digital Dreams</h2>
+            <p>
+                Explore how artists use algorithms, AI, and generative tools to create evolving digital artworks.
+                Interactive displays reveal how machines and human creativity merge in real time.
+            </p>
+            <h2>Code and Canvas</h2>
+            <p>
+                This exhibition highlights programming as a medium for artistic creation. Installations and projections
+                demonstrate how lines of code transform into immersive visual experiences.
+            </p>
+            <!-- Third-party embed: cite rights holder in project documentation -->
+            <section class="video-section">
+                <h2>Featured film</h2>
+                <p>Embedded from YouTube (serve this site over <code>http://localhost</code> if the player shows a configuration error).</p>
+                <div class="video-wrap">
+                    <!-- YouTube embed — content © respective rights holder -->
+                    <iframe src="https://www.youtube.com/embed/HYcbHpMZQ_Q" title="Museum-related video from YouTube" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            </section>
+        </main>
+        <figure class="main_img">
+            <img src="../static/MonoMuse%20Museum%20Image.png" alt="MonoMuse museum building exterior">
+        </figure>
+        <footer class="footer">
+            <p><strong>Contact:</strong> <a href="mailto:hello@monomuse.org">Email MonoMuse</a> · <a href="tel:+14125551234">412-555-1234</a></p>
+            <p class="footer-meta">Fonts: Google Fonts (Space Grotesk). Map: © OpenStreetMap. Video: YouTube embed.</p>
+            <p id="copyYear"></p>
+        </footer>
+    </div>
+    <script src="../static/script.js"></script>
+</body>
+</html>
