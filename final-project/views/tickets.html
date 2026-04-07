@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--
+  MonoMuse | tickets.html — Short reference table of ticket types; links to buytickets.html for purchase flow.
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Siri Ganapathineedi">
+    <meta name="description" content="MonoMuse ticket types at a glance.">
+    <title>Ticket types | MonoMuse Museum</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body onload="addYear()">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <div class="container">
+        <header class="header">
+            <img id="logo" src="../static/monomuse-logo-transparent.png" alt="MONOMUSE logo with golden glow">
+        </header>
+        <nav class="nav_bar" aria-label="Primary">
+            <a href="../index.html" class="nav_home_mobile">Home</a>
+            <button type="button" class="nav_hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primaryNavLinks">&#9776;</button>
+            <div class="nav_links" id="primaryNavLinks">
+                <a href="../index.html" class="nav_home_desktop">Home</a>
+                <a href="explore.html">Explore</a>
+                <a href="exhibitions.html">Exhibitions</a>
+                <a href="buytickets.html" class="cta">Buy Tickets</a>
+                <a href="checkout.html">Checkout</a>
+                <a href="membership.html">Support</a>
+            </div>
+        </nav>
+
+        <main class="main" id="main-content">
+            <h1>Ticket types</h1>
+            <p>For dates and purchase flow, visit <a href="buytickets.html">tickets &amp; schedule</a>.</p>
+            <!-- Semantic table: th scope="col" for screen readers -->
+            <table>
+                <tr>
+                    <th scope="col">Ticket type</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Price</th>
+                </tr>
+                <tr>
+                    <td>Adult</td>
+                    <td>General admission for ages 18 and over.</td>
+                    <td>$18</td>
+                </tr>
+                <tr>
+                    <td>Student</td>
+                    <td>Student ID required at entry.</td>
+                    <td>$10</td>
+                </tr>
+                <tr>
+                    <td>Member</td>
+                    <td>Member ID required at entry.</td>
+                    <td>$15</td>
+                </tr>
+            </table>
+        </main>
+        <figure class="main_img">
+            <img src="../static/monomuse-logo-transparent.png" alt="MONOMUSE logo with golden glow">
+        </figure>
+        <footer class="footer">
+            <p><strong>Contact:</strong> <a href="mailto:hello@monomuse.org">Email MonoMuse</a> · <a href="tel:+14125551234">412-555-1234</a></p>
+            <p class="footer-meta">Fonts: Google Fonts (Space Grotesk). Map: © OpenStreetMap. Video: YouTube embed.</p>
+            <p id="copyYear"></p>
+        </footer>
+    </div>
+    <script src="../static/script.js"></script>
+</body>
+</html>

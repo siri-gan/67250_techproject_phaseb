@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!--
+  MonoMuse | checkout.html — Full ticket checkout.
+  - Form id="checkoutForm" uses novalidate: browser defaults disabled; script.js validateCheckout() shows custom errors.
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Siri Ganapathineedi">
+    <meta name="description" content="MonoMuse ticket checkout — select visit date, tickets, and complete your order.">
+    <title>Checkout | MonoMuse Museum</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body onload="addYear()">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <div class="container">
+        <header class="header">
+            <img id="logo" src="../static/monomuse-logo-transparent.png" alt="MONOMUSE logo with golden glow">
+        </header>
+        <nav class="nav_bar" aria-label="Primary">
+            <a href="../index.html" class="nav_home_mobile">Home</a>
+            <button type="button" class="nav_hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primaryNavLinks">&#9776;</button>
+            <div class="nav_links" id="primaryNavLinks">
+                <a href="../index.html" class="nav_home_desktop">Home</a>
+                <a href="explore.html">Explore</a>
+                <a href="exhibitions.html">Exhibitions</a>
+                <a href="buytickets.html" class="cta">Buy Tickets</a>
+                <a href="checkout.html">Checkout</a>
+                <a href="membership.html">Support</a>
+            </div>
+        </nav>
+
+        <main class="main" id="main-content">
+            <h1>Ticket checkout</h1>
+            <p>Complete your simulated order. All tickets are <strong>$18 each</strong> for this demo; your total updates when you change quantity.</p>
+
+            <!--
+              Required fields marked with * (decorative span aria-hidden).
+              #priceTotal updated live by updateCheckoutTotal() when #ticketQty changes.
+              Button is type="button" so we submit only via JS after validation.
+            -->
+            <form id="checkoutForm" class="checkout-form" novalidate>
+                <label for="visitDate">Visit date <span aria-hidden="true">*</span></label>
+                <input type="date" id="visitDate" name="visitDate" required min="2026-01-01" aria-required="true" aria-describedby="visitDateError">
+                <span id="visitDateError" class="field-error" role="alert"></span>
+
+                <label for="ticketType">Ticket type <span aria-hidden="true">*</span></label>
+                <select id="ticketType" name="ticketType" required aria-required="true" aria-describedby="ticketTypeError">
+                    <option value="">Select type</option>
+                    <option value="general">General admission</option>
+                    <option value="student">Student (ID at door)</option>
+                    <option value="member">Member (ID at door)</option>
+                </select>
+                <span id="ticketTypeError" class="field-error" role="alert"></span>
+
+                <label for="ticketQty">Number of tickets (1–10) <span aria-hidden="true">*</span></label>
+                <input type="number" id="ticketQty" name="ticketQty" min="1" max="10" step="1" value="1" required aria-required="true" aria-describedby="ticketQtyError" inputmode="numeric">
+                <span id="ticketQtyError" class="field-error" role="alert"></span>
+
+                <p class="price-line" aria-live="polite">Estimated total: $<span id="priceTotal">18.00</span></p>
+
+                <label for="checkoutEmail">Email <span aria-hidden="true">*</span></label>
+                <input type="email" id="checkoutEmail" name="checkoutEmail" required autocomplete="email" aria-required="true" aria-describedby="checkoutEmailError">
+                <span id="checkoutEmailError" class="field-error" role="alert"></span>
+
+                <label for="zipCode">Zip code (optional)</label>
+                <input type="text" id="zipCode" name="zipCode" maxlength="5" pattern="[0-9]{5}" inputmode="numeric" aria-describedby="zipCodeError zipHint">
+                <span id="zipHint" class="form-hint">If provided, use exactly 5 digits.</span>
+                <span id="zipCodeError" class="field-error" role="alert"></span>
+
+                <div class="checkbox-row">
+                    <input type="checkbox" id="mailingList" name="mailingList" value="yes">
+                    <label for="mailingList">Join our mailing list for events and exhibitions</label>
+                </div>
+
+                <button type="button" class="cta" id="placeOrderBtn">Place order</button>
+            </form>
+        </main>
+        <figure class="main_img">
+            <img src="../static/monomuse-logo-transparent.png" alt="MONOMUSE logo with golden glow">
+        </figure>
+        <footer class="footer">
+            <p><strong>Contact:</strong> <a href="mailto:hello@monomuse.org">Email MonoMuse</a> · <a href="tel:+14125551234">412-555-1234</a></p>
+            <p class="footer-meta">Fonts: Google Fonts (Space Grotesk). Map: © OpenStreetMap. Video: YouTube embed.</p>
+            <p id="copyYear"></p>
+        </footer>
+    </div>
+    <script src="../static/script.js"></script>
+</body>
+</html>

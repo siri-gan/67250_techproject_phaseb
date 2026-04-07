@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!--
+  MonoMuse | explore.html — Visit planning: mission, milestones, hours table, directions.
+  Map: Leaflet JS is loaded at bottom of body AFTER this page’s content so #map exists in DOM.
+  initMuseumMap() in script.js runs on every page but only does work when L (Leaflet) and #map exist.
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Siri Ganapathineedi">
+    <meta name="description" content="Plan your MonoMuse visit — hours, location map, and mission.">
+    <title>Visit &amp; explore | MonoMuse Museum</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/style.css">
+    <!-- Leaflet 1.9 — https://leafletjs.com/ — OpenStreetMap map below -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+</head>
+<body onload="addYear()">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <div class="container">
+        <header class="header">
+            <img id="logo" src="../static/monomuse-logo-transparent.png" alt="MONOMUSE logo with golden glow">
+        </header>
+        <nav class="nav_bar" aria-label="Primary">
+            <a href="../index.html" class="nav_home_mobile">Home</a>
+            <button type="button" class="nav_hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primaryNavLinks">&#9776;</button>
+            <div class="nav_links" id="primaryNavLinks">
+                <a href="../index.html" class="nav_home_desktop">Home</a>
+                <a href="explore.html">Explore</a>
+                <a href="exhibitions.html">Exhibitions</a>
+                <a href="buytickets.html" class="cta">Buy Tickets</a>
+                <a href="checkout.html">Checkout</a>
+                <a href="membership.html">Support</a>
+            </div>
+        </nav>
+        <main class="main" id="main-content">
+            <h1>Visit &amp; explore</h1>
+
+            <h2>Mission statement</h2>
+            <p>
+                MonoMuse is dedicated to exploring the evolving relationship between art, technology, and society.
+                Our mission is to inspire curiosity and creativity by showcasing innovative exhibitions that highlight
+                how digital tools and human imagination shape the future of artistic expression.
+            </p>
+            <h2>Milestones</h2>
+            <ul>
+                <li>2023: Expansion of the museum space and launch of international artist collaborations.</li>
+                <li>2018: Launch of the Interactive Media Lab for creative coding exploration.</li>
+                <li>2016: MonoMuse opens with its first exhibition on digital storytelling.</li>
+            </ul>
+
+            <h2>Hours &amp; admission desk</h2>
+            <table class="hours-table">
+                <tr><th scope="col">Day</th><th scope="col">Hours</th><th scope="col">Notes</th></tr>
+                <tr><td>Monday</td><td>Closed</td><td>—</td></tr>
+                <tr><td>Tuesday</td><td>Closed</td><td>Staff &amp; school groups by appointment</td></tr>
+                <tr><td>Wednesday</td><td>10 a.m.–6 p.m.</td><td>Last entry 5:15 p.m.</td></tr>
+                <tr><td>Thursday</td><td>10 a.m.–6 p.m.</td><td>Evening talks select dates</td></tr>
+                <tr><td>Friday</td><td>10 a.m.–8 p.m.</td><td>Extended hours</td></tr>
+                <tr><td>Saturday</td><td>10 a.m.–6 p.m.</td><td>Family activities 1–4 p.m.</td></tr>
+                <tr><td>Sunday</td><td>10 a.m.–6 p.m.</td><td>—</td></tr>
+            </table>
+            <p><strong>Ticket pricing:</strong> see <a href="buytickets.html">tickets &amp; schedule</a> or <a href="checkout.html">checkout</a> to purchase.</p>
+
+            <h2>Location &amp; directions</h2>
+            <p>
+                <strong>Address:</strong> 4400 Forbes Avenue, Pittsburgh, PA (Oakland cultural district).<br>
+                <strong>Transit:</strong> Port Authority buses 61A/B/C/D and 71A/B/C stop within two blocks.<br>
+                <strong>Contact:</strong> <a href="mailto:hello@monomuse.org">hello@monomuse.org</a> · <a href="tel:+14125551234">412-555-1234</a>
+            </p>
+            <!-- #map filled by L.map() in script.js; tile attribution required by OSM -->
+            <section class="map-section">
+                <h2>Map</h2>
+                <p>Interactive map (OpenStreetMap data via Leaflet).</p>
+                <div id="map" role="region" aria-label="Museum location map"></div>
+            </section>
+        </main>
+        <figure class="main_img">
+            <img src="../static/MonoMuse%20Museum%20Image.png" alt="MonoMuse museum building exterior">
+        </figure>
+        <footer class="footer">
+            <p><strong>Contact:</strong> <a href="mailto:hello@monomuse.org">Email MonoMuse</a> · <a href="tel:+14125551234">412-555-1234</a></p>
+            <p class="footer-meta">Fonts: Google Fonts (Space Grotesk). Map: © OpenStreetMap. Video: YouTube embed.</p>
+            <p id="copyYear"></p>
+        </footer>
+    </div>
+    <!-- Leaflet before site script: global L must exist before initMuseumMap() runs -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="../static/script.js"></script>
+</body>
+</html>
